@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MerriURL</title>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="index.js" defer></script>
+    <script type="text/javascript">
+    function buildAdminList() {
+      const linkList = document.getElementById('linkList')
+      const localStorage = window.localStorage;
+      for (let link in localStorage) {
+        if (link.length === 3) {
+          const newLi = document.createElement('li');
+          const innerLink = document.createElement('a');
+          innerLink.href = localStorage[link];
+
+          innerLink.innerHTML = link;
+          newLi.appendChild(innerLink);
+          linkList.appendChild(newLi);
+        }
+      }
+    }
+    </script>
+  </head>
+
+  <body onload="buildAdminList()">
+      <header>
+        <h1 id='headerTitle' >MerriURL</h1>
+
+        <div id='buttonContainer'>
+          <button class='headerBtn'>Admin</button>
+          <button onclick="window.location.href='./index.html'" class='headerBtn'>Home</button>
+        </div>
+      </header>
+
+    <h2>Stored Links</h2>
+    <ul style="list-style-type: none" id='linkList'>
+
+    </ul>
+  </body>
+</html>

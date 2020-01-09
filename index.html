@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MerriURL</title>
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"></link>
+    <script src="index.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1 id='headerTitle' >MerriURL</h1>
+
+      <div id='buttonContainer'>
+        <button class='headerBtn' onclick="window.location.href='./admin.html'" >Admin</button>
+        <button class='headerBtn'>Home</button>
+      </div>
+    </header>
+
+    <form>
+        <label class='formLabel'>Enter a URL starting with https//: </label>
+        <input type='url' id='urlInput' pattern="https?://.*" required/>
+      <button id='submitBtn' type='submit'>Submit</button>
+    </form>
+    <div id='urlDisplay'>
+
+    </div>
+  </body>
+
+  </html>
